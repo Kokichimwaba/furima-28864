@@ -15,8 +15,7 @@
 ### Association
 
 - has_many :items 
-- has_many :purchase
-- has_one  :items, through: :managements
+- has_many :purchases
 
 ## items テーブル
 
@@ -24,7 +23,7 @@
 | ------------------ | ---------- | ------------------------------- |
 | name               | string     | null: false                     |
 | image              | string     | null: false                     |
-| explain            | string     | null: false                     |
+| explain            | text       | null: false                     |
 | category           | integer    | null: false                     |
 | statas             | integer    | null: false                     |
 | delivery_fee       | integer    | null: false                     |
@@ -37,7 +36,6 @@
 
 - belongs_to :user
 - has_one    :purchase
-- has_one    :users, through: :managements
 
 ## purchases テーブル
 
@@ -45,9 +43,6 @@
 | ---------------- | ---------- | ------------------------------- |
 | user             | references | null: false, foreign_key: true  |
 | item             | references | null: false, foreign_key: true  |
-| card_information | string     | null: false                     |
-| security_code    | string     | null: false                     |
-| comment          | string     | null: false                     |
 
 ### Association
 
@@ -71,12 +66,12 @@
 
 | Column       |  Type      | Options                         |
 | ------------ | ---------- | ------------------------------- |
-| postal_code  | integer    | null: false                     |
+| postal_code  | string     | null: false                     |
 | prefecture   | integer    | null: false                     |
-| city         | integer    | null: false                     |
-| street       | integer    | null: false                     |
-| building     | integer    | null: false                     |
-| phone number | integer    | null: false                     |
+| city         | string     | null: false                     |
+| street       | string     | null: false                     |
+| building     | string     | null: false                     |
+| phone number | string     | null: false                     |
 | purchase     | references | null: false, foreign_key: true  |
 
 ### Association
