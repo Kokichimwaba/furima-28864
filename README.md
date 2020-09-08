@@ -70,7 +70,7 @@
 | prefecture   | integer    | null: false                     |
 | city         | string     | null: false                     |
 | street       | string     | null: false                     |
-| building     | string     | null: false                     |
+| building     | string     |                                 |
 | phone number | string     | null: false                     |
 | purchase     | references | null: false, foreign_key: true  |
 
